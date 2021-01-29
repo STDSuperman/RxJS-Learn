@@ -1,16 +1,5 @@
 import * as Rx from 'rxjs/Rx'
 
-// // 外部产生新的事件
-const myObservable = new Rx.Subject();
-
-myObservable.subscribe((text: string) => {
-    console.log(text);
-});
-
-myObservable.next('票练过')
-
-// // 内部产生新的事件
-
 const insideObservable = Rx.Observable.create((observable: any) => {
     observable.next('111')
     setTimeout(() => {
